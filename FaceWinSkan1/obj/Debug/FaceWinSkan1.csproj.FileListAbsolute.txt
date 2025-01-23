@@ -92,3 +92,4 @@ J:\PROGRAMOWANIE\Projekt C\FaceWinSkan1 - rev.1 Wykrywanie\FaceWinSkan1\obj\Debu
 J:\PROGRAMOWANIE\Projekt C\FaceWinSkan1 - rev.1 Wykrywanie\FaceWinSkan1\obj\Debug\FaceWinSkan1.csproj.CopyComplete
 J:\PROGRAMOWANIE\Projekt C\FaceWinSkan1 - rev.1 Wykrywanie\FaceWinSkan1\obj\Debug\FaceWinSkan1.exe
 J:\PROGRAMOWANIE\Projekt C\FaceWinSkan1 - rev.1 Wykrywanie\FaceWinSkan1\obj\Debug\FaceWinSkan1.pdb
+J:\PROGRAMOWANIE\Projekt C\FaceWinSkan1 - rev.1 Wykrywanie\FaceWinSkan1\obj\Debug\FaceWinSkan1.csproj.AssemblyReference.cache
