@@ -1,0 +1,94 @@
+C:\Users\Łukasz\source\repos\FaceWinSkan1\FaceWinSkan1\bin\Debug\FaceWinSkan1.exe.config
+C:\Users\Łukasz\source\repos\FaceWinSkan1\FaceWinSkan1\bin\Debug\FaceWinSkan1.exe
+C:\Users\Łukasz\source\repos\FaceWinSkan1\FaceWinSkan1\bin\Debug\FaceWinSkan1.pdb
+C:\Users\Łukasz\source\repos\FaceWinSkan1\FaceWinSkan1\bin\Debug\Guna.UI2.dll
+C:\Users\Łukasz\source\repos\FaceWinSkan1\FaceWinSkan1\obj\Debug\FaceWinSkan1.csproj.AssemblyReference.cache
+C:\Users\Łukasz\source\repos\FaceWinSkan1\FaceWinSkan1\obj\Debug\FaceWinSkan1.Form1.resources
+C:\Users\Łukasz\source\repos\FaceWinSkan1\FaceWinSkan1\obj\Debug\FaceWinSkan1.Properties.Resources.resources
+C:\Users\Łukasz\source\repos\FaceWinSkan1\FaceWinSkan1\obj\Debug\FaceWinSkan1.csproj.GenerateResource.cache
+C:\Users\Łukasz\source\repos\FaceWinSkan1\FaceWinSkan1\obj\Debug\FaceWinSkan1.csproj.CoreCompileInputs.cache
+C:\Users\Łukasz\source\repos\FaceWinSkan1\FaceWinSkan1\obj\Debug\FaceWinSkan1.csproj.CopyComplete
+C:\Users\Łukasz\source\repos\FaceWinSkan1\FaceWinSkan1\obj\Debug\FaceWinSkan1.exe
+C:\Users\Łukasz\source\repos\FaceWinSkan1\FaceWinSkan1\obj\Debug\FaceWinSkan1.pdb
+J:\PROGRAMOWANIE\Projekt C\FaceWinSkan1 - kopia samego Interface\FaceWinSkan1\obj\Debug\FaceWinSkan2.exe.config
+J:\PROGRAMOWANIE\Projekt C\FaceWinSkan1 - kopia samego Interface\FaceWinSkan1\obj\Debug\FaceWinSkan1.Form1.resources
+J:\PROGRAMOWANIE\Projekt C\FaceWinSkan1 - kopia samego Interface\FaceWinSkan1\obj\Debug\FaceWinSkan1.Properties.Resources.resources
+J:\PROGRAMOWANIE\Projekt C\FaceWinSkan1 - kopia samego Interface\FaceWinSkan1\obj\Debug\FaceWinSkan1.csproj.GenerateResource.cache
+J:\PROGRAMOWANIE\Projekt C\FaceWinSkan1 - kopia samego Interface\FaceWinSkan1\obj\Debug\FaceWinSkan1.csproj.CoreCompileInputs.cache
+J:\PROGRAMOWANIE\Projekt C\FaceWinSkan1 - kopia samego Interface\FaceWinSkan1\bin\Debug\FaceWinSkan2.exe.config
+J:\PROGRAMOWANIE\Projekt C\FaceWinSkan1 - kopia samego Interface\FaceWinSkan1\bin\Debug\FaceWinSkan2.exe
+J:\PROGRAMOWANIE\Projekt C\FaceWinSkan1 - kopia samego Interface\FaceWinSkan1\bin\Debug\FaceWinSkan2.pdb
+J:\PROGRAMOWANIE\Projekt C\FaceWinSkan1 - kopia samego Interface\FaceWinSkan1\bin\Debug\Emgu.CV.dll
+J:\PROGRAMOWANIE\Projekt C\FaceWinSkan1 - kopia samego Interface\FaceWinSkan1\bin\Debug\cvextern.dll
+J:\PROGRAMOWANIE\Projekt C\FaceWinSkan1 - kopia samego Interface\FaceWinSkan1\bin\Debug\libusb-1.0.dll
+J:\PROGRAMOWANIE\Projekt C\FaceWinSkan1 - kopia samego Interface\FaceWinSkan1\bin\Debug\opencv_videoio_ffmpeg4100_64.dll
+J:\PROGRAMOWANIE\Projekt C\FaceWinSkan1 - kopia samego Interface\FaceWinSkan1\bin\Debug\concrt140.dll
+J:\PROGRAMOWANIE\Projekt C\FaceWinSkan1 - kopia samego Interface\FaceWinSkan1\bin\Debug\msvcp140.dll
+J:\PROGRAMOWANIE\Projekt C\FaceWinSkan1 - kopia samego Interface\FaceWinSkan1\bin\Debug\msvcp140_1.dll
+J:\PROGRAMOWANIE\Projekt C\FaceWinSkan1 - kopia samego Interface\FaceWinSkan1\bin\Debug\msvcp140_2.dll
+J:\PROGRAMOWANIE\Projekt C\FaceWinSkan1 - kopia samego Interface\FaceWinSkan1\bin\Debug\msvcp140_atomic_wait.dll
+J:\PROGRAMOWANIE\Projekt C\FaceWinSkan1 - kopia samego Interface\FaceWinSkan1\bin\Debug\msvcp140_codecvt_ids.dll
+J:\PROGRAMOWANIE\Projekt C\FaceWinSkan1 - kopia samego Interface\FaceWinSkan1\bin\Debug\vcruntime140.dll
+J:\PROGRAMOWANIE\Projekt C\FaceWinSkan1 - kopia samego Interface\FaceWinSkan1\bin\Debug\vcruntime140_1.dll
+J:\PROGRAMOWANIE\Projekt C\FaceWinSkan1 - kopia samego Interface\FaceWinSkan1\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+J:\PROGRAMOWANIE\Projekt C\FaceWinSkan1 - kopia samego Interface\FaceWinSkan1\bin\Debug\System.Buffers.dll
+J:\PROGRAMOWANIE\Projekt C\FaceWinSkan1 - kopia samego Interface\FaceWinSkan1\bin\Debug\System.IO.Pipelines.dll
+J:\PROGRAMOWANIE\Projekt C\FaceWinSkan1 - kopia samego Interface\FaceWinSkan1\bin\Debug\System.Memory.dll
+J:\PROGRAMOWANIE\Projekt C\FaceWinSkan1 - kopia samego Interface\FaceWinSkan1\bin\Debug\System.Numerics.Vectors.dll
+J:\PROGRAMOWANIE\Projekt C\FaceWinSkan1 - kopia samego Interface\FaceWinSkan1\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+J:\PROGRAMOWANIE\Projekt C\FaceWinSkan1 - kopia samego Interface\FaceWinSkan1\bin\Debug\System.Text.Encodings.Web.dll
+J:\PROGRAMOWANIE\Projekt C\FaceWinSkan1 - kopia samego Interface\FaceWinSkan1\bin\Debug\System.Text.Json.dll
+J:\PROGRAMOWANIE\Projekt C\FaceWinSkan1 - kopia samego Interface\FaceWinSkan1\bin\Debug\System.Threading.Tasks.Extensions.dll
+J:\PROGRAMOWANIE\Projekt C\FaceWinSkan1 - kopia samego Interface\FaceWinSkan1\bin\Debug\System.ValueTuple.dll
+J:\PROGRAMOWANIE\Projekt C\FaceWinSkan1 - kopia samego Interface\FaceWinSkan1\bin\Debug\Guna.UI2.dll
+J:\PROGRAMOWANIE\Projekt C\FaceWinSkan1 - kopia samego Interface\FaceWinSkan1\obj\Debug\FaceWinSkan1.csproj.CopyComplete
+J:\PROGRAMOWANIE\Projekt C\FaceWinSkan1 - kopia samego Interface\FaceWinSkan1\obj\Debug\FaceWinSkan2.exe
+J:\PROGRAMOWANIE\Projekt C\FaceWinSkan1 - kopia samego Interface\FaceWinSkan1\obj\Debug\FaceWinSkan2.pdb
+J:\PROGRAMOWANIE\Projekt C\FaceWinSkan1 - kopia samego Interface\FaceWinSkan1\bin\Debug\Emgu.CV.Bitmap.dll
+J:\PROGRAMOWANIE\Projekt C\FaceWinSkan1 - kopia samego Interface\FaceWinSkan1\bin\Debug\System.Drawing.Common.dll
+J:\PROGRAMOWANIE\Projekt C\FaceWinSkan1 - kopia samego Interface\FaceWinSkan1\bin\Debug\System.Drawing.Common.pdb
+J:\PROGRAMOWANIE\Projekt C\FaceWinSkan1 - kopia samego Interface\FaceWinSkan1\bin\Debug\Resources\haarcascade_frontalface_default.xml
+J:\PROGRAMOWANIE\Projekt C\FaceWinSkan1 - kopia samego Interface\FaceWinSkan1\bin\Debug\haarcascade_frontalface_default.xml
+J:\PROGRAMOWANIE\Projekt C\FaceWinSkan1 - kopia samego Interface\FaceWinSkan1\bin\Debug\haarcascade_profileface.xml
+J:\PROGRAMOWANIE\Projekt C\FaceWinSkan1 - kopia samego Interface\FaceWinSkan1\bin\Debug\haarcascade_eye.xml
+J:\PROGRAMOWANIE\Projekt C\FaceWinSkan1 - rev.1 Wykrywanie\FaceWinSkan1\bin\Debug\haarcascade_eye.xml
+J:\PROGRAMOWANIE\Projekt C\FaceWinSkan1 - rev.1 Wykrywanie\FaceWinSkan1\bin\Debug\haarcascade_frontalface_default.xml
+J:\PROGRAMOWANIE\Projekt C\FaceWinSkan1 - rev.1 Wykrywanie\FaceWinSkan1\bin\Debug\haarcascade_profileface.xml
+J:\PROGRAMOWANIE\Projekt C\FaceWinSkan1 - rev.1 Wykrywanie\FaceWinSkan1\bin\Debug\Resources\haarcascade_frontalface_default.xml
+J:\PROGRAMOWANIE\Projekt C\FaceWinSkan1 - rev.1 Wykrywanie\FaceWinSkan1\bin\Debug\FaceWinSkan1.exe.config
+J:\PROGRAMOWANIE\Projekt C\FaceWinSkan1 - rev.1 Wykrywanie\FaceWinSkan1\bin\Debug\FaceWinSkan1.exe
+J:\PROGRAMOWANIE\Projekt C\FaceWinSkan1 - rev.1 Wykrywanie\FaceWinSkan1\bin\Debug\FaceWinSkan1.pdb
+J:\PROGRAMOWANIE\Projekt C\FaceWinSkan1 - rev.1 Wykrywanie\FaceWinSkan1\bin\Debug\Emgu.CV.dll
+J:\PROGRAMOWANIE\Projekt C\FaceWinSkan1 - rev.1 Wykrywanie\FaceWinSkan1\bin\Debug\Emgu.CV.Bitmap.dll
+J:\PROGRAMOWANIE\Projekt C\FaceWinSkan1 - rev.1 Wykrywanie\FaceWinSkan1\bin\Debug\cvextern.dll
+J:\PROGRAMOWANIE\Projekt C\FaceWinSkan1 - rev.1 Wykrywanie\FaceWinSkan1\bin\Debug\libusb-1.0.dll
+J:\PROGRAMOWANIE\Projekt C\FaceWinSkan1 - rev.1 Wykrywanie\FaceWinSkan1\bin\Debug\opencv_videoio_ffmpeg4100_64.dll
+J:\PROGRAMOWANIE\Projekt C\FaceWinSkan1 - rev.1 Wykrywanie\FaceWinSkan1\bin\Debug\concrt140.dll
+J:\PROGRAMOWANIE\Projekt C\FaceWinSkan1 - rev.1 Wykrywanie\FaceWinSkan1\bin\Debug\msvcp140.dll
+J:\PROGRAMOWANIE\Projekt C\FaceWinSkan1 - rev.1 Wykrywanie\FaceWinSkan1\bin\Debug\msvcp140_1.dll
+J:\PROGRAMOWANIE\Projekt C\FaceWinSkan1 - rev.1 Wykrywanie\FaceWinSkan1\bin\Debug\msvcp140_2.dll
+J:\PROGRAMOWANIE\Projekt C\FaceWinSkan1 - rev.1 Wykrywanie\FaceWinSkan1\bin\Debug\msvcp140_atomic_wait.dll
+J:\PROGRAMOWANIE\Projekt C\FaceWinSkan1 - rev.1 Wykrywanie\FaceWinSkan1\bin\Debug\msvcp140_codecvt_ids.dll
+J:\PROGRAMOWANIE\Projekt C\FaceWinSkan1 - rev.1 Wykrywanie\FaceWinSkan1\bin\Debug\vcruntime140.dll
+J:\PROGRAMOWANIE\Projekt C\FaceWinSkan1 - rev.1 Wykrywanie\FaceWinSkan1\bin\Debug\vcruntime140_1.dll
+J:\PROGRAMOWANIE\Projekt C\FaceWinSkan1 - rev.1 Wykrywanie\FaceWinSkan1\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+J:\PROGRAMOWANIE\Projekt C\FaceWinSkan1 - rev.1 Wykrywanie\FaceWinSkan1\bin\Debug\System.Buffers.dll
+J:\PROGRAMOWANIE\Projekt C\FaceWinSkan1 - rev.1 Wykrywanie\FaceWinSkan1\bin\Debug\System.Drawing.Common.dll
+J:\PROGRAMOWANIE\Projekt C\FaceWinSkan1 - rev.1 Wykrywanie\FaceWinSkan1\bin\Debug\System.Drawing.Common.pdb
+J:\PROGRAMOWANIE\Projekt C\FaceWinSkan1 - rev.1 Wykrywanie\FaceWinSkan1\bin\Debug\System.IO.Pipelines.dll
+J:\PROGRAMOWANIE\Projekt C\FaceWinSkan1 - rev.1 Wykrywanie\FaceWinSkan1\bin\Debug\System.Memory.dll
+J:\PROGRAMOWANIE\Projekt C\FaceWinSkan1 - rev.1 Wykrywanie\FaceWinSkan1\bin\Debug\System.Numerics.Vectors.dll
+J:\PROGRAMOWANIE\Projekt C\FaceWinSkan1 - rev.1 Wykrywanie\FaceWinSkan1\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+J:\PROGRAMOWANIE\Projekt C\FaceWinSkan1 - rev.1 Wykrywanie\FaceWinSkan1\bin\Debug\System.Text.Encodings.Web.dll
+J:\PROGRAMOWANIE\Projekt C\FaceWinSkan1 - rev.1 Wykrywanie\FaceWinSkan1\bin\Debug\System.Text.Json.dll
+J:\PROGRAMOWANIE\Projekt C\FaceWinSkan1 - rev.1 Wykrywanie\FaceWinSkan1\bin\Debug\System.Threading.Tasks.Extensions.dll
+J:\PROGRAMOWANIE\Projekt C\FaceWinSkan1 - rev.1 Wykrywanie\FaceWinSkan1\bin\Debug\System.ValueTuple.dll
+J:\PROGRAMOWANIE\Projekt C\FaceWinSkan1 - rev.1 Wykrywanie\FaceWinSkan1\bin\Debug\Guna.UI2.dll
+J:\PROGRAMOWANIE\Projekt C\FaceWinSkan1 - rev.1 Wykrywanie\FaceWinSkan1\obj\Debug\FaceWinSkan1.exe.config
+J:\PROGRAMOWANIE\Projekt C\FaceWinSkan1 - rev.1 Wykrywanie\FaceWinSkan1\obj\Debug\FaceWinSkan1.Form1.resources
+J:\PROGRAMOWANIE\Projekt C\FaceWinSkan1 - rev.1 Wykrywanie\FaceWinSkan1\obj\Debug\FaceWinSkan1.Properties.Resources.resources
+J:\PROGRAMOWANIE\Projekt C\FaceWinSkan1 - rev.1 Wykrywanie\FaceWinSkan1\obj\Debug\FaceWinSkan1.csproj.GenerateResource.cache
+J:\PROGRAMOWANIE\Projekt C\FaceWinSkan1 - rev.1 Wykrywanie\FaceWinSkan1\obj\Debug\FaceWinSkan1.csproj.CoreCompileInputs.cache
+J:\PROGRAMOWANIE\Projekt C\FaceWinSkan1 - rev.1 Wykrywanie\FaceWinSkan1\obj\Debug\FaceWinSkan1.csproj.CopyComplete
+J:\PROGRAMOWANIE\Projekt C\FaceWinSkan1 - rev.1 Wykrywanie\FaceWinSkan1\obj\Debug\FaceWinSkan1.exe
+J:\PROGRAMOWANIE\Projekt C\FaceWinSkan1 - rev.1 Wykrywanie\FaceWinSkan1\obj\Debug\FaceWinSkan1.pdb
