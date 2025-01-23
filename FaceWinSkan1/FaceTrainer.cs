@@ -11,10 +11,12 @@ using System.Linq;
 public class FaceTrainer
 {
     private List<string> _names;  // Lista nazw przypisanych do etykiet
+    private LBPHFaceRecognizer _faceRecognizer;
 
     public FaceTrainer()
     {
         _names = new List<string>();
+        _faceRecognizer = new LBPHFaceRecognizer();
     }
 
     public void TrainModel(string faceFolderPath, string modelSavePath)
@@ -65,9 +67,11 @@ public class FaceTrainer
             }
         }
 
-        // Inicjalizujemy rozpoznawanie twarzy
-        var faceRecognizer = new LBPHFaceRecognizer();
-        faceRecognizer.Train(images, new VectorOfInt(labels.ToArray()));  // Używamy poprawnego typu danych
+        // Konwersja listy etykiet na VectorOfInt
+        VectorOfInt labelsVector = new VectorOfInt(labels.ToArray());
+
+        // Trenujemy model
+        _faceRecognizer.Train(images, labelsVector);  // Używamy poprawnego typu danych
 
         // Sprawdzamy, czy folder docelowy istnieje, jeśli nie, tworzymy go
         string directoryPath = Path.GetDirectoryName(modelSavePath);
@@ -79,7 +83,7 @@ public class FaceTrainer
         try
         {
             // Zapisujemy model w podanej ścieżce
-            faceRecognizer.Write(modelSavePath);
+            _faceRecognizer.Write(modelSavePath);
             Console.WriteLine("Model zapisany w: " + modelSavePath);
         }
         catch (Exception ex)
@@ -88,6 +92,67 @@ public class FaceTrainer
             throw new Exception("Wystąpił błąd podczas zapisywania modelu: " + ex.Message);
         }
     }
+
+
+    public void LoadModel(string modelPath)
+    {
+        if (File.Exists(modelPath))
+        {
+            _faceRecognizer.Read(modelPath);
+        }
+        else
+        {
+            throw new FileNotFoundException("Model file not found.");
+        }
+    }
+
+    public void SaveModel(string modelPath)
+    {
+        if (_faceRecognizer != null)
+        {
+            _faceRecognizer.Write(modelPath);
+        }
+        else
+        {
+            throw new InvalidOperationException("FaceRecognizer is not initialized.");
+        }
+    }
+
+    public void UpdateModel(string faceFolderPath)
+    {
+        if (_faceRecognizer == null)
+        {
+            throw new InvalidOperationException("FaceRecognizer is not initialized.");
+        }
+
+        // Wczytaj nowe zdjęcia i etykiety z folderu Face
+        var images = new List<Image<Gray, byte>>();
+        var labels = new List<int>();
+
+        foreach (var file in Directory.GetFiles(faceFolderPath, "*.jpg"))
+        {
+            var image = new Image<Gray, byte>(file);
+            images.Add(image);
+
+            // Zakładamy, że nazwa pliku zawiera etykietę, np. "1.jpg", "2.jpg"
+            var label = int.Parse(Path.GetFileNameWithoutExtension(file));
+            labels.Add(label);
+        }
+
+        // Konwersja listy obrazów na VectorOfMat
+        VectorOfMat imagesVector = new VectorOfMat();
+        foreach (var img in images)
+        {
+            imagesVector.Push(img.Mat);
+        }
+
+        // Konwersja listy etykiet na VectorOfInt
+        VectorOfInt labelsVector = new VectorOfInt(labels.ToArray());
+
+        // Aktualizuj model o nowe zdjęcia
+        _faceRecognizer.Update(imagesVector, labelsVector);
+    }
+
 
     // Metoda do przypisania etykiety na podstawie nazwy pliku
     private int GetLabelFromFile(string filePath)
@@ -129,8 +194,7 @@ public class FaceTrainer
         }
 
         // Wczytanie modelu
-        var faceRecognizer = new LBPHFaceRecognizer();
-        faceRecognizer.Read(modelPath);
+        _faceRecognizer.Read(modelPath);
 
         // Wczytanie obrazu do rozpoznania
         Mat image = CvInvoke.Imread(imagePath, ImreadModes.Grayscale);
@@ -140,7 +204,7 @@ public class FaceTrainer
         }
 
         // Rozpoznawanie twarzy
-        var result = faceRecognizer.Predict(image);
+        var result = _faceRecognizer.Predict(image);
 
         // Zwracamy nazwisko na podstawie etykiety
         if (result.Label != -1 && result.Label < _names.Count)
@@ -150,6 +214,5 @@ public class FaceTrainer
 
         return "Nie rozpoznano twarzy.";
     }
-
-
 }
+

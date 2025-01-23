@@ -44,14 +44,15 @@ namespace FaceWinSkan1
             }
         }
 
-        private void LogAction(string message)
+        private void LogAction(string message, string logLevel = "INFO")
         {
-            // Możesz dodać timestamp do każdej wiadomości
             string timestamp = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
-            listBoxLog.Items.Add($"[{timestamp}] {message}");
-
-            // Jeśli chcesz, aby lista była zawsze widoczna od dołu (przewijanie)
+            string logEntry = $"[{timestamp}] [{logLevel}] {message}";
+            listBoxLog.Items.Add(logEntry);
             listBoxLog.SelectedIndex = listBoxLog.Items.Count - 1;
+
+            // Dodatkowo zapisuj logi do pliku
+            File.AppendAllText("application.log", logEntry + Environment.NewLine);
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -155,7 +156,8 @@ namespace FaceWinSkan1
 
         private void btnKamera_Click(object sender, EventArgs e)
         {
-
+            try
+            {
                 if (_capture == null)
                 {
                     int cameraIndex = comboBoxKamery.SelectedIndex;
@@ -164,7 +166,7 @@ namespace FaceWinSkan1
                     _capture.Start();
                     btnKamera.Text = "Zatrzymaj Kamerę";
                     LogAction("Kamera została uruchomiona.");
-            }
+                }
                 else
                 {
                     _capture.Stop();
@@ -173,6 +175,11 @@ namespace FaceWinSkan1
                     pictureBoxCamera.Image = null;
                     btnKamera.Text = "Uruchom Kamerę";
                     LogAction("Kamera została wyłączona.");
+                }
+            }
+            catch (Exception ex)
+            {
+                LogAction($"Błąd podczas uruchamiania kamery: {ex.Message}", "ERROR");
             }
             
         }
@@ -221,7 +228,11 @@ namespace FaceWinSkan1
                         {
                             // Rysowanie prostokąta wokół twarzy
                             CvInvoke.Rectangle(_frame, face, color, 2);
-                           
+
+                            string label = GetLabelForFace(face);
+                            Point labelPoint = new Point(face.X, face.Y - 10);
+                            CvInvoke.PutText(_frame, label, labelPoint, FontFace.HersheySimplex, 0.5, color, 2);
+
                             // Wycinek obrazu twarzy
                             Mat faceMat = new Mat(grayFrame, face);
                             Image<Gray, byte> grayFaceImage = faceMat.ToImage<Gray, byte>();
@@ -279,7 +290,14 @@ namespace FaceWinSkan1
                 LogAction("Błąd: Kamera nie jest prawidłowo zainicjowana.");
             }
         }
-
+        
+        private string GetLabelForFace(Rectangle face)
+        {
+            // Przyklad: odczyt etykiety z mapping.csv
+            // Możesz dopasować rozpoznaną twarz do istniejących danych
+            return "Nieznana twarz"; // Domyślnie
+        }
+        
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
             _capture?.Dispose();
@@ -459,8 +477,7 @@ namespace FaceWinSkan1
                 labelResult.ForeColor = Color.Red;
             }
         }
-
-
+        
         private void btn_ImageFace_Click_1(object sender, EventArgs e)
         {
             try
