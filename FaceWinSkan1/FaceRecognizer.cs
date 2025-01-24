@@ -97,27 +97,4 @@ public class FaceRecognizer
             return (-1, double.MaxValue);
         }
     }
-
-    //public (int label, double confidence) RecognizeFace(Bitmap bitmap)
-    //{
-    //    try
-    //    {
-    //        // Konwersja Bitmap na Image<Gray, byte>
-    //        using (Image<Gray, byte> grayImage = bitmap.ToImage<Gray, byte>())
-    //        {
-    //            CvInvoke.EqualizeHist(grayImage, grayImage);
-
-    //            // Rozpoznaj twarz
-    //            var result = _faceRecognizer.Predict(grayImage.Mat);
-
-    //            Console.WriteLine($"Rozpoznano twarz. Etykieta: {result.Label}, Pewność: {result.Distance}");
-    //            return (result.Label, result.Distance);
-    //        }
-    //    }
-    //    catch (Exception ex)
-    //    {
-    //        Console.WriteLine($"Błąd podczas rozpoznawania twarzy: {ex.Message}");
-    //        return (-1, double.MaxValue); // Zwraca -1 w przypadku błędu
-    //    }
-    //}
 }

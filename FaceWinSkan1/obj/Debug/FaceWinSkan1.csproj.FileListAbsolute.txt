@@ -93,3 +93,9 @@ J:\PROGRAMOWANIE\Projekt C\FaceWinSkan1 - rev.1 Wykrywanie\FaceWinSkan1\obj\Debu
 J:\PROGRAMOWANIE\Projekt C\FaceWinSkan1 - rev.1 Wykrywanie\FaceWinSkan1\obj\Debug\FaceWinSkan1.exe
 J:\PROGRAMOWANIE\Projekt C\FaceWinSkan1 - rev.1 Wykrywanie\FaceWinSkan1\obj\Debug\FaceWinSkan1.pdb
 J:\PROGRAMOWANIE\Projekt C\FaceWinSkan1 - rev.1 Wykrywanie\FaceWinSkan1\obj\Debug\FaceWinSkan1.csproj.AssemblyReference.cache
+J:\PROGRAMOWANIE\Projekt C\FaceWinSkan1 - rev.1 Wykrywanie\FaceWinSkan1\bin\Debug\haarcascade_frontalface_alt2.xml
+J:\PROGRAMOWANIE\Projekt C\FaceWinSkan1 - rev.1 Wykrywanie\FaceWinSkan1\bin\Debug\haarcascade_frontalface_alt_tree.xml
+J:\PROGRAMOWANIE\Projekt C\FaceWinSkan1 - rev.1 Wykrywanie\FaceWinSkan1\bin\Debug\haarcascade_mcs_mouth.xml
+J:\PROGRAMOWANIE\Projekt C\FaceWinSkan1 - rev.1 Wykrywanie\FaceWinSkan1\bin\Debug\haarcascade_mcs_nose.xml
+J:\PROGRAMOWANIE\Projekt C\FaceWinSkan1 - rev.1 Wykrywanie\FaceWinSkan1\bin\Debug\Emgu.Util.dll
+J:\PROGRAMOWANIE\Projekt C\FaceWinSkan1 - rev.1 Wykrywanie\FaceWinSkan1\bin\Debug\Emgu.Util.xml

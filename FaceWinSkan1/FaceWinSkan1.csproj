@@ -34,6 +34,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Emgu.Util">
+      <HintPath>..\..\..\..\Repozytorium GitHub\Face-Detection\FaceRecProOV\bin\Debug\Emgu.Util.dll</HintPath>
+    </Reference>
     <Reference Include="Guna.UI2">
       <HintPath>J:\INSTALKI PC\Instalki VISUAL STUDIO\Guna UI Framework Ultimate v2.0.0.1 + Keygen\Guna.UI-Framework-Lib-master\Guna.UI2 WinForms\.net 4.0\Guna.UI2.dll</HintPath>
     </Reference>
@@ -105,7 +108,19 @@
     <Content Include="haarcascade_eye.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="haarcascade_frontalface_alt2.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="haarcascade_frontalface_alt_tree.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="haarcascade_frontalface_default.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="haarcascade_mcs_mouth.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="haarcascade_mcs_nose.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="haarcascade_profileface.xml">

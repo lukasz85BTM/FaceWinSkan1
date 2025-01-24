@@ -70,6 +70,8 @@ namespace FaceWinSkan1
             this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel3 = new System.Windows.Forms.ToolStripStatusLabel();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.labelRecognitionResult = new System.Windows.Forms.Label();
+            this.comboBoxDetectors = new Guna.UI2.WinForms.Guna2ComboBox();
             this.menuStrip1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCamera)).BeginInit();
@@ -218,6 +220,7 @@ namespace FaceWinSkan1
             // groupBox3
             // 
             this.groupBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox3.Controls.Add(this.labelRecognitionResult);
             this.groupBox3.Controls.Add(this.guna2Separator1);
             this.groupBox3.Controls.Add(this.face4);
             this.groupBox3.Controls.Add(this.buttonRecognize);
@@ -231,7 +234,7 @@ namespace FaceWinSkan1
             this.groupBox3.Controls.Add(this.labelResult);
             this.groupBox3.Location = new System.Drawing.Point(452, 27);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(403, 318);
+            this.groupBox3.Size = new System.Drawing.Size(403, 264);
             this.groupBox3.TabIndex = 14;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "ROZPOZNANIE";
@@ -387,14 +390,15 @@ namespace FaceWinSkan1
             // groupBox1
             // 
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox1.Controls.Add(this.comboBoxDetectors);
             this.groupBox1.Controls.Add(this.btn_model);
             this.groupBox1.Controls.Add(this.btn_ImageFace);
             this.groupBox1.Controls.Add(this.guna2Button2);
             this.groupBox1.Controls.Add(this.TrainButton);
             this.groupBox1.Controls.Add(this.btnKamera);
-            this.groupBox1.Location = new System.Drawing.Point(452, 351);
+            this.groupBox1.Location = new System.Drawing.Point(452, 297);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(403, 97);
+            this.groupBox1.Size = new System.Drawing.Size(403, 151);
             this.groupBox1.TabIndex = 15;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "KONTROLA";
@@ -527,6 +531,35 @@ namespace FaceWinSkan1
             // 
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // labelRecognitionResult
+            // 
+            this.labelRecognitionResult.AutoSize = true;
+            this.labelRecognitionResult.Location = new System.Drawing.Point(221, 9);
+            this.labelRecognitionResult.Name = "labelRecognitionResult";
+            this.labelRecognitionResult.Size = new System.Drawing.Size(35, 13);
+            this.labelRecognitionResult.TabIndex = 17;
+            this.labelRecognitionResult.Text = "label4";
+            this.labelRecognitionResult.Visible = false;
+            // 
+            // comboBoxDetectors
+            // 
+            this.comboBoxDetectors.BackColor = System.Drawing.Color.Transparent;
+            this.comboBoxDetectors.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.comboBoxDetectors.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxDetectors.FocusedColor = System.Drawing.Color.Empty;
+            this.comboBoxDetectors.FocusedState.Parent = this.comboBoxDetectors;
+            this.comboBoxDetectors.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.comboBoxDetectors.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.comboBoxDetectors.FormattingEnabled = true;
+            this.comboBoxDetectors.HoverState.Parent = this.comboBoxDetectors;
+            this.comboBoxDetectors.ItemHeight = 30;
+            this.comboBoxDetectors.ItemsAppearance.Parent = this.comboBoxDetectors;
+            this.comboBoxDetectors.Location = new System.Drawing.Point(6, 109);
+            this.comboBoxDetectors.Name = "comboBoxDetectors";
+            this.comboBoxDetectors.ShadowDecoration.Parent = this.comboBoxDetectors;
+            this.comboBoxDetectors.Size = new System.Drawing.Size(357, 36);
+            this.comboBoxDetectors.TabIndex = 18;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -603,6 +636,8 @@ namespace FaceWinSkan1
         private Guna.UI2.WinForms.Guna2ImageButton btn_ImageFace;
         private Guna.UI2.WinForms.Guna2ImageButton btn_model;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Label labelRecognitionResult;
+        private Guna.UI2.WinForms.Guna2ComboBox comboBoxDetectors;
     }
 }
 

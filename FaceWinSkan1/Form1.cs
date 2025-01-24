@@ -6,6 +6,7 @@ using Emgu.CV;
 using Emgu.CV.Structure;
 using System.IO;
 using Emgu.CV.CvEnum;
+using Emgu.CV.Util;
 
 namespace FaceWinSkan1
 {
@@ -14,7 +15,6 @@ namespace FaceWinSkan1
         private VideoCapture _capture = null;
         private Mat _frame = new Mat();
         private FaceRecognizer _faceRecognizer;
-        private string _mappingFilePath = "mapping.csv";
 
         public Form1()
         {
@@ -32,6 +32,7 @@ namespace FaceWinSkan1
             buttonRecognize.Enabled = true;
             // Ścieżka do modelu
             string modelPath = Path.Combine(Application.StartupPath, "path", "to", "save", "model.xml");
+
             try
             {
                 // Inicjalizacja FaceRecognizer
@@ -41,6 +42,15 @@ namespace FaceWinSkan1
             catch (Exception ex)
             {
                 MessageBox.Show($"Błąd przy inicjalizacji rozpoznawania twarzy: {ex.Message}");
+            }
+            try
+            {
+                string mappingFilePath = Path.Combine(Application.StartupPath, "mapping.csv");
+                LoadLabelNameMapping(mappingFilePath);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Błąd podczas ładowania mapowania etykiet: " + ex.Message);
             }
         }
 
@@ -108,7 +118,7 @@ namespace FaceWinSkan1
 
                 // Inicjalizacja detektora twarzy
                 CascadeClassifier faceDetector = new CascadeClassifier("haarcascade_frontalface_default.xml");
-                
+
                 // Wykrywanie twarzy
                 //var faces = faceDetector.DetectMultiScale(frame, 1.1, 10, Size.Empty);
                 var faces = faceDetector.DetectMultiScale(frame, 1.1, 10, new Size(30, 30));
@@ -147,13 +157,16 @@ namespace FaceWinSkan1
         private void InitializeFaceDetectors()
         {
             _faceDetectors = new List<CascadeClassifier>
-            {
-                new CascadeClassifier("haarcascade_frontalface_default.xml"), // Twarz
-                new CascadeClassifier("haarcascade_profileface.xml"), // Profil Twarzy
-                new CascadeClassifier("haarcascade_eye.xml") // Dodaj detektor oczu
-            };
+    {
+        new CascadeClassifier("haarcascade_frontalface_default.xml"), // Twarz
+        new CascadeClassifier("haarcascade_profileface.xml"), // Profil Twarzy
+        //new CascadeClassifier("haarcascade_eye.xml"), // Detektor oczu
+        //new CascadeClassifier("haarcascade_frontalface_alt_tree.xml"), // Alternatywny detektor twarzy
+        //new CascadeClassifier("haarcascade_frontalface_alt2.xml"), // Alternatywny detektor twarzy 2
+        //new CascadeClassifier("haarcascade_mcs_mouth.xml"), // Detektor ust
+        //new CascadeClassifier("haarcascade_mcs_nose.xml") // Detektor nosa
+    };
         }
-
         private void btnKamera_Click(object sender, EventArgs e)
         {
             try
@@ -195,125 +208,227 @@ namespace FaceWinSkan1
 
         private void ProcessFrame(object sender, EventArgs e)
         {
-            if (_capture != null && _capture.Ptr != IntPtr.Zero)
+            try
             {
-                // Ustawienie statusu kamery na "Aktywna"
-                toolStripStatusLabel2.Text = "Status kamery: Aktywna";
-
-                // Przechwytywanie obrazu z kamery
-                _capture.Retrieve(_frame, 0);
-
-                // Przekształcenie obrazu na odcienie szarości
-                Mat grayFrame = new Mat();
-                CvInvoke.CvtColor(_frame, grayFrame, ColorConversion.Bgr2Gray);
-
-                // Zastosowanie histogram equalization
-                CvInvoke.EqualizeHist(grayFrame, grayFrame);
-
-                int detectorIndex = 0; // Licznik detektorów
-
-                // Zmienna przechowująca indeks, aby przypisać obrazy do pictureBox
-                int faceCounter = 1; //Licznik Twarzy
-
-                // Pętla po detektorach twarzy
-                foreach (var detector in _faceDetectors)
+                if (_capture != null && _capture.Ptr != IntPtr.Zero)
                 {
-                    try
+                    // Ustawienie statusu kamery na "Aktywna"
+                    toolStripStatusLabel2.Text = "Status kamery: Aktywna";
+
+                    // Przechwytywanie obrazu z kamery
+                    _capture.Retrieve(_frame, 0);
+
+                    // Przekształcenie obrazu na odcienie szarości
+                    Mat grayFrame = new Mat();
+                    CvInvoke.CvtColor(_frame, grayFrame, ColorConversion.Bgr2Gray);
+
+                    // Zastosowanie histogram equalization
+                    CvInvoke.EqualizeHist(grayFrame, grayFrame);
+
+                    // Zastosowanie rozmycia Gaussa
+                    //CvInvoke.GaussianBlur(grayFrame, grayFrame, new Size(5, 5), 1.5);
+
+                    // Normalizacja pikseli dla lepszej analizy
+                    CvInvoke.Normalize(grayFrame, grayFrame, 0, 255, NormType.MinMax);
+
+                    int detectorIndex = 0; // Licznik detektorów
+
+                    // Zmienna przechowująca indeks, aby przypisać obrazy do pictureBox
+                    int faceCounter = 1; //Licznik Twarzy
+
+                    // Pętla po detektorach twarzy
+                    foreach (var detector in _faceDetectors)
                     {
-                        // Detekcja twarzy
-                        var faces = detector.DetectMultiScale(grayFrame, 1.1, 10, Size.Empty);
-                        var color = _colors[detectorIndex % _colors.Count];
-                        
-                        foreach (var face in faces)
+                        try
                         {
-                            // Rysowanie prostokąta wokół twarzy
-                            CvInvoke.Rectangle(_frame, face, color, 2);
+                            // Detekcja twarzy
+                            var faces = detector.DetectMultiScale(grayFrame, 1.1, 10, Size.Empty);
+                            var color = _colors[detectorIndex % _colors.Count];
 
-                            string label = GetLabelForFace(face);
-                            Point labelPoint = new Point(face.X, face.Y - 10);
-                            CvInvoke.PutText(_frame, label, labelPoint, FontFace.HersheySimplex, 0.5, color, 2);
-
-                            // Wycinek obrazu twarzy
-                            Mat faceMat = new Mat(grayFrame, face);
-                            Image<Gray, byte> grayFaceImage = faceMat.ToImage<Gray, byte>();
-
-                            // Przekształcanie obrazu twarzy na bitmapę
-                            Bitmap faceBitmap = new Bitmap(grayFaceImage.ToBitmap());
-
-                            // Skalowanie obrazu twarzy do odpowiednich rozmiarów kontrolki
-                            Bitmap scaledFaceBitmap = new Bitmap(faceBitmap, new Size(pictureBoxRecognizedFace.Width, pictureBoxRecognizedFace.Height));
-
-                            // Przypisanie twarzy do odpowiednich kontrolkach
-                            switch (faceCounter)
+                            foreach (var face in faces)
                             {
-                                case 1:
-                                    pictureBoxRecognizedFace.Image = scaledFaceBitmap;  // Pierwsza twarz do pictureBoxRecognizedFace
-                                    break;
-                                case 2:
-                                    face2.Image = new Bitmap(faceBitmap, new Size(face2.Width, face2.Height)); // Druga twarz do face2
-                                    break;
-                                case 3:
-                                    face3.Image = new Bitmap(faceBitmap, new Size(face3.Width, face3.Height)); // Trzecia twarz do face3
-                                    break;
-                                case 4:
-                                    face4.Image = new Bitmap(faceBitmap, new Size(face4.Width, face4.Height)); // Czwarta twarz do face4
-                                    break;
+                                // Rysowanie prostokąta wokół twarzy
+                                CvInvoke.Rectangle(_frame, face, color, 2);
+
+                                string label = GetLabelForFace(face);
+                                Point labelPoint = new Point(face.X, face.Y - 10);
+                                CvInvoke.PutText(_frame, label, labelPoint, FontFace.HersheySimplex, 0.5, color, 2);
+
+                                // Wycinek obrazu twarzy
+                                Mat faceMat = new Mat(grayFrame, face);
+                                Image<Gray, byte> grayFaceImage = faceMat.ToImage<Gray, byte>();
+
+                                // Przekształcanie obrazu twarzy na bitmapę
+                                Bitmap faceBitmap = new Bitmap(grayFaceImage.ToBitmap());
+
+                                // Skalowanie obrazu twarzy do odpowiednich rozmiarów kontrolki
+                                Bitmap scaledFaceBitmap = new Bitmap(faceBitmap, new Size(pictureBoxRecognizedFace.Width, pictureBoxRecognizedFace.Height));
+
+                                // Przypisanie twarzy do odpowiednich kontrolkach
+                                switch (faceCounter)
+                                {
+                                    case 1:
+                                        pictureBoxRecognizedFace.Image = scaledFaceBitmap;  // Pierwsza twarz do pictureBoxRecognizedFace
+                                        break;
+                                    case 2:
+                                        face2.Image = new Bitmap(faceBitmap, new Size(face2.Width, face2.Height)); // Druga twarz do face2
+                                        break;
+                                    case 3:
+                                        face3.Image = new Bitmap(faceBitmap, new Size(face3.Width, face3.Height)); // Trzecia twarz do face3
+                                        break;
+                                    case 4:
+                                        face4.Image = new Bitmap(faceBitmap, new Size(face4.Width, face4.Height)); // Czwarta twarz do face4
+                                        break;
+                                }
+
+                                // Zwiększanie licznika dla twarzy
+                                faceCounter++;
+
+                                // Jeśli wykryliśmy 4 twarze, zatrzymajmy dodawanie
+                                if (faceCounter > 4) break;
                             }
-
-                            // Zwiększanie licznika dla twarzy
-                            faceCounter++;
-
-                            // Jeśli wykryliśmy 4 twarze, zatrzymajmy dodawanie
-                            if (faceCounter > 4) break;
                         }
+                        catch (Exception ex)
+                        {
+                            // Logowanie błędów w detektorach twarzy
+                            Console.WriteLine($"Błąd w detektorze {detectorIndex}: {ex.Message}");
+                        }
+                        detectorIndex++;
                     }
-                    catch (Exception ex)
-                    {
-                        // Logowanie błędów
-                        Console.WriteLine($"Błąd w detektorze {detectorIndex}: {ex.Message}");
-                    }
-                    detectorIndex++;
+
+                    // Wyświetlanie obrazu z kamery
+                    Image<Bgr, byte> image = _frame.ToImage<Bgr, byte>();
+                    Bitmap bitmap = image.ToBitmap();
+                    pictureBoxCamera.Image = bitmap; // Wyświetlanie obrazu z kamery w kontrolce PictureBox
+
                 }
+                else
+                {
+                    // Jeśli kamera nie jest aktywna, ustawiamy status na "Nieaktywna"
+                    toolStripStatusLabel2.Text = "Status kamery: Nieaktywna";
 
-                // Wyświetlanie obrazu z kamery
-                Image<Bgr, byte> image = _frame.ToImage<Bgr, byte>();
-                Bitmap bitmap = image.ToBitmap();
-                pictureBoxCamera.Image = bitmap; // Wyświetlanie obrazu z kamery w kontrolce PictureBox
+                    // Logowanie błędu o nieaktywnej kamerze
+                    LogAction("Błąd: Kamera nie jest prawidłowo zainicjowana.");
+                }
+            }
+            catch (Exception ex)
+            {
+                // Logowanie ogólnych błędów przechwytywania obrazu
+                LogAction($"Błąd przechwytywania obrazu: {ex.Message}");
+            }
+        }
 
+
+        private Dictionary<int, string> _labelNameMapping;
+
+        /// <summary>
+        /// Zwraca etykietę dla wykrytej twarzy na podstawie mapowania.
+        /// </summary>
+        /// <param name="face">Wykryta twarz jako Rectangle</param>
+        /// <returns>Etykieta przypisana do twarzy lub "Nieznana twarz", jeśli nie znaleziono dopasowania</returns>
+
+        public void LoadLabelNameMapping(string mappingFilePath)
+        {
+            _labelNameMapping = new Dictionary<int, string>();
+
+            if (File.Exists(mappingFilePath))
+            {
+                foreach (var line in File.ReadAllLines(mappingFilePath))
+                {
+                    var parts = line.Split(',');
+                    if (parts.Length == 2 && int.TryParse(parts[0], out int label))
+                    {
+                        _labelNameMapping[label] = parts[1].Trim();
+                    }
+                }
             }
             else
             {
-                // Ustawienie statusu kamery na "Nieaktywna"
-                toolStripStatusLabel2.Text = "Status kamery: Nieaktywna";
-
-                // Logowanie, że kamera jest nieaktywna
-                LogAction("Błąd: Kamera nie jest prawidłowo zainicjowana.");
+                throw new FileNotFoundException("Plik mapping.csv nie został znaleziony.");
             }
         }
         
         private string GetLabelForFace(Rectangle face)
         {
-            // Przyklad: odczyt etykiety z mapping.csv
-            // Możesz dopasować rozpoznaną twarz do istniejących danych
-            return "Nieznana twarz"; // Domyślnie
+            // Sprawdź, czy `_labelNameMapping` zostało załadowane
+            if (_labelNameMapping == null || _labelNameMapping.Count == 0)
+            {
+                return "Mapowanie etykiet nie zostało załadowane.";
+            }
+
+            foreach (var entry in _labelNameMapping)
+            {
+                int label = entry.Key;
+                string personName = entry.Value;
+
+                //// Funkcja porównawcza - w zależności od implementacji
+                //if (IsFaceMatch(face, label))
+                //{
+                //    return personName;
+                //}
+            }
+
+            return "Nieznana twarz"; // Jeśli nie znaleziono dopasowania
         }
         
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
-            _capture?.Dispose();
+            if (_capture != null)
+            {
+                _capture.Stop();
+                _capture.Dispose();
+            }
         }
 
         public void DetectFacesInFrame(Mat frame)
         {
+            // Konwertowanie obrazu do odcieni szarości
+            Mat grayFrame = new Mat();
+            CvInvoke.CvtColor(frame, grayFrame, ColorConversion.Bgr2Gray);
+
+            // Inicjalizacja detektorów
             CascadeClassifier faceDetector = new CascadeClassifier("haarcascade_frontalface_default.xml");
+            CascadeClassifier profileFaceDetector = new CascadeClassifier("haarcascade_profileface.xml");
 
-            // Optymalizacja parametrów
-            var faces = faceDetector.DetectMultiScale(frame, 1.1, 4, new Size(30, 30));
+            // Wykrywanie twarzy frontowych i profilowych
+            var faces = faceDetector.DetectMultiScale(grayFrame, 1.1, 4, new Size(30, 30));
+            var profileFaces = profileFaceDetector.DetectMultiScale(grayFrame, 1.1, 4, new Size(30, 30));
 
+            bool frontFaceDetected = faces.Length > 0;
+            bool profileFaceDetected = profileFaces.Length > 0;
 
-            foreach (var face in faces)
+            // Jeśli wykryto twarze frontowe
+            if (frontFaceDetected)
             {
-                CvInvoke.Rectangle(frame, face, new MCvScalar(0, 0, 255), 2);
+                foreach (var face in faces)
+                {
+                    // Rysowanie prostokąta wokół twarzy frontowej
+                    CvInvoke.Rectangle(frame, face, new MCvScalar(0, 0, 255), 2);
+
+                    // Zapisywanie wykrytej twarzy frontowej
+                    Mat detectedFace = new Mat(frame, face);
+                    string faceFileName = $"Face_{DateTime.Now.Ticks}.jpg";
+                    detectedFace.Save(faceFileName);
+                }
+            }
+            // Jeśli twarze frontowe nie zostały wykryte, ale wykryto twarze profilowe
+            else if (profileFaceDetected)
+            {
+                foreach (var profileFace in profileFaces)
+                {
+                    // Rysowanie prostokąta wokół twarzy profilowej
+                    CvInvoke.Rectangle(frame, profileFace, new MCvScalar(0, 255, 0), 2);
+
+                    // Zapisywanie wykrytej twarzy profilowej
+                    Mat detectedProfileFace = new Mat(frame, profileFace);
+                    string profileFaceFileName = $"ProfileFace_{DateTime.Now.Ticks}.jpg";
+                    detectedProfileFace.Save(profileFaceFileName);
+                }
+            }
+            else
+            {
+                // Jeżeli nie wykryto żadnej twarzy
+                Console.WriteLine("Nie wykryto twarzy.");
             }
         }
 
@@ -337,23 +452,70 @@ namespace FaceWinSkan1
                 // Tworzenie instancji rozpoznawania twarzy
                 FaceRecognition faceRecognition = new FaceRecognition();
 
-                // Zapisywanie wykrytych twarzy
-                List<Image<Bgr, byte>> detectedFaces = faceRecognition.SaveDetectedFaces(_frame, savePath, faceName);
+                // Konwertowanie obrazu do odcieni szarości
+                Mat grayFrame = new Mat();
+                CvInvoke.CvtColor(_frame, grayFrame, ColorConversion.Bgr2Gray);
 
+                // Inicjalizacja detektorów
+                CascadeClassifier faceDetector = new CascadeClassifier("haarcascade_frontalface_default.xml");
+                CascadeClassifier profileFaceDetector = new CascadeClassifier("haarcascade_profileface.xml");
+
+                // Wykrywanie twarzy frontowych i profilowych
+                var faces = faceDetector.DetectMultiScale(grayFrame, 1.1, 4, new Size(30, 30));
+                var profileFaces = profileFaceDetector.DetectMultiScale(grayFrame, 1.1, 4, new Size(30, 30));
+
+                // Lista wykrytych twarzy
+                List<Rectangle> detectedFaces = new List<Rectangle>();
+
+                // Dodaj wykryte twarze frontowe
+                detectedFaces.AddRange(faces);
+                // Dodaj wykryte twarze profilowe
+                detectedFaces.AddRange(profileFaces);
+
+                // Sprawdzamy, czy wykryto jakiekolwiek twarze
                 if (detectedFaces.Count > 0)
                 {
-                    pictureBoxRecognizedFace.Image = detectedFaces[0].ToBitmap();
-                    LogAction($"Wykryte twarze zostały zapisane w katalogu 'Face'.");
+                    // Zapisywanie wykrytych twarzy
+                    List<Image<Bgr, byte>> detectedFacesList = faceRecognition.SaveDetectedFaces(_frame, savePath, faceName);
 
-                    // Zapis nazwy osoby do pliku mapowania
-                    string mappingFilePath = Path.Combine(Application.StartupPath, "mapping.csv");
-                    int generatedLabel = AddOrUpdateName(faceName, mappingFilePath);
+                    if (detectedFacesList.Count > 0)
+                    {
+                        pictureBoxRecognizedFace.Image = detectedFacesList[0].ToBitmap();
+                        LogAction($"Wykryte twarze zostały zapisane w katalogu 'Face'.");
 
-                    MessageBox.Show($"Wykryte twarze zostały zapisane w katalogu 'Face' i przypisano etykietę {generatedLabel} dla '{faceName}'.");
+                        // Zapis nazwy osoby do pliku mapowania
+                        string mappingFilePath = Path.Combine(Application.StartupPath, "mapping.csv");
+                        int generatedLabel = AddOrUpdateName(faceName, mappingFilePath);
+
+                        MessageBox.Show($"Wykryte twarze zostały zapisane w katalogu 'Face' i przypisano etykietę {generatedLabel} dla '{faceName}'.");
+
+                        // Aktualizacja mapowania etykiet
+                        LoadLabelNameMapping(mappingFilePath);
+                    }
                 }
                 else
                 {
+                    // Jeśli nie wykryto żadnych twarzy
                     MessageBox.Show("Nie wykryto żadnych twarzy.");
+                }
+
+                // Dodajmy logi diagnostyczne
+                if (faces.Length > 0)
+                {
+                    Console.WriteLine($"Wykryto {faces.Length} twarzy frontowych.");
+                }
+                else
+                {
+                    Console.WriteLine("Nie wykryto twarzy frontowych.");
+                }
+
+                if (profileFaces.Length > 0)
+                {
+                    Console.WriteLine($"Wykryto {profileFaces.Length} twarzy profilowych.");
+                }
+                else
+                {
+                    Console.WriteLine("Nie wykryto twarzy profilowych.");
                 }
             }
             else
@@ -362,6 +524,8 @@ namespace FaceWinSkan1
                 LogAction("Próba zapisania twarzy bez uruchomionej kamery.");
             }
         }
+
+
         private int AddOrUpdateName(string name, string mappingFilePath)
         {
             Dictionary<int, string> labelNameMapping = new Dictionary<int, string>();
@@ -465,10 +629,10 @@ namespace FaceWinSkan1
                 FaceRecognizer recognizer = new FaceRecognizer(modelPath);
 
                 // Rozpoznawanie twarzy
-                var result = recognizer.RecognizeFace(imageToRecognize);
+                var (label, confidence) = recognizer.RecognizeFace(imageToRecognize);
 
                 // Wyświetlenie wyniku w label
-                labelResult.Text = $"Etykieta: {result.label}\nPewność: {result.confidence:F2}";
+                labelResult.Text = $"Etykieta: {label}\nPewność: {confidence:F2}";
                 labelResult.ForeColor = Color.Green;
             }
             catch (Exception ex)
@@ -534,23 +698,23 @@ namespace FaceWinSkan1
                 return;
             }
 
-            Bitmap imageToRecognize = new Bitmap(pictureBoxCamera.Image);
+            Bitmap imageToProcess = new Bitmap(pictureBoxCamera.Image);
 
             try
             {
                 // Ścieżka do modelu
-                string modelFolder = Path.Combine(Application.StartupPath, "path", "to", "save");
-                string modelFileName = "model.xml";
-                string modelPath = Path.Combine(modelFolder, modelFileName);
+                string recognitionModelFolder = Path.Combine(Application.StartupPath, "path", "to", "save");
+                string recognitionModelFileName = "model.xml";
+                string modelPath = Path.Combine(recognitionModelFolder, recognitionModelFileName);
 
                 // Tworzenie obiektu FaceRecognizer
-                FaceRecognizer recognizer = new FaceRecognizer(modelPath);
+                FaceRecognizer faceRecognizer = new FaceRecognizer(modelPath);
 
                 // Rozpoznawanie twarzy
-                var result = recognizer.RecognizeFace(imageToRecognize);
+                var result = faceRecognizer.RecognizeFace(imageToProcess);
 
                 // Wyświetlenie wyniku w label
-                labelResult.Text = $"Etykieta: {result.label}\nPewność: {result.confidence:F2}";
+                labelResult.Text = $"Etykieta: {result.label}\nPewność: {result.confidence:F2} %";
                 labelResult.ForeColor = Color.Green;
             }
             catch (Exception ex)
@@ -559,6 +723,7 @@ namespace FaceWinSkan1
                 labelResult.ForeColor = Color.Red;
             }
         }
+
     }
 }
 
