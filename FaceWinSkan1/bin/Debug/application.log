@@ -469,3 +469,179 @@
 [2025-01-24 20:19:38] [INFO] Kamery zostały załadowane.
 [2025-01-24 20:19:40] [INFO] Kamera została uruchomiona.
 [2025-01-24 20:19:56] [INFO] Kamera została wyłączona.
+[2025-01-25 11:56:02] [INFO] Rozpoczęcie wykrywania kamer...
+[2025-01-25 11:56:03] [INFO] Znaleziono kamerę 0
+[2025-01-25 11:56:03] [INFO] Kamery zostały załadowane.
+[2025-01-25 11:56:07] [INFO] Kamera została uruchomiona.
+[2025-01-25 11:56:30] [INFO] Kamera została wyłączona.
+[2025-01-25 12:20:47] [INFO] Rozpoczęcie wykrywania kamer...
+[2025-01-25 12:20:49] [INFO] Znaleziono kamerę 0
+[2025-01-25 12:20:49] [INFO] Kamery zostały załadowane.
+[2025-01-25 12:20:51] [INFO] Kamera została uruchomiona.
+[2025-01-25 12:21:57] [INFO] Kamera została wyłączona.
+[2025-01-25 12:23:45] [INFO] Rozpoczęcie wykrywania kamer...
+[2025-01-25 12:23:47] [INFO] Znaleziono kamerę 0
+[2025-01-25 12:23:47] [INFO] Kamery zostały załadowane.
+[2025-01-25 12:23:50] [INFO] Kamera została uruchomiona.
+[2025-01-25 12:24:03] [INFO] Kamera została wyłączona.
+[2025-01-25 12:25:16] [INFO] Rozpoczęcie wykrywania kamer...
+[2025-01-25 12:25:18] [INFO] Znaleziono kamerę 0
+[2025-01-25 12:25:18] [INFO] Kamery zostały załadowane.
+[2025-01-25 12:25:21] [INFO] Kamera została uruchomiona.
+[2025-01-25 12:25:27] [INFO] Kamera została wyłączona.
+[2025-01-25 12:45:23] [INFO] Rozpoczęcie wykrywania kamer...
+[2025-01-25 12:45:24] [INFO] Znaleziono kamerę 0
+[2025-01-25 12:45:25] [INFO] Kamery zostały załadowane.
+[2025-01-25 12:45:27] [INFO] Kamera została uruchomiona.
+[2025-01-25 12:46:02] [INFO] Wykryte twarze zostały zapisane w katalogu 'Face'.
+[2025-01-25 12:46:09] [INFO] Wykryte twarze zostały zapisane w katalogu 'Face'.
+[2025-01-25 12:46:12] [INFO] Model został wytrenowany i zapisany!
+[2025-01-25 12:46:25] [INFO] Kamera została wyłączona.
+[2025-01-25 12:56:10] [INFO] Rozpoczęcie wykrywania kamer...
+[2025-01-25 12:56:11] [INFO] Znaleziono kamerę 0
+[2025-01-25 12:56:11] [INFO] Kamery zostały załadowane.
+[2025-01-25 12:56:13] [INFO] Kamera została uruchomiona.
+[2025-01-25 12:56:43] [INFO] Wykryte twarze zostały zapisane w katalogu 'Face'.
+[2025-01-25 12:56:47] [INFO] Wykryte twarze zostały zapisane w katalogu 'Face'.
+[2025-01-25 12:56:53] [INFO] Model został wytrenowany i zapisany!
+[2025-01-25 12:57:03] [INFO] Wykryte twarze zostały zapisane w katalogu 'Face'.
+[2025-01-25 12:57:06] [INFO] Model został wytrenowany i zapisany!
+[2025-01-25 12:57:37] [INFO] Kamera została wyłączona.
+[2025-01-25 12:58:59] [INFO] Rozpoczęcie wykrywania kamer...
+[2025-01-25 12:59:00] [INFO] Znaleziono kamerę 0
+[2025-01-25 12:59:01] [INFO] Kamery zostały załadowane.
+[2025-01-25 12:59:29] [INFO] Kamera została uruchomiona.
+[2025-01-25 12:59:47] [INFO] Wykryte twarze zostały zapisane w katalogu 'Face'.
+[2025-01-25 13:00:01] [INFO] Wykryte twarze zostały zapisane w katalogu 'Face'.
+[2025-01-25 13:00:10] [INFO] Kamera została wyłączona.
+[2025-01-25 13:00:25] [INFO] Rozpoczęcie wykrywania kamer...
+[2025-01-25 13:00:27] [INFO] Znaleziono kamerę 0
+[2025-01-25 13:00:27] [INFO] Kamery zostały załadowane.
+[2025-01-25 13:00:29] [INFO] Kamera została uruchomiona.
+[2025-01-25 13:00:41] [INFO] Wykryte twarze zostały zapisane w katalogu 'Face'.
+[2025-01-25 13:01:18] [INFO] Kamera została wyłączona.
+[2025-01-25 13:06:00] [INFO] Rozpoczęcie wykrywania kamer...
+[2025-01-25 13:06:01] [INFO] Znaleziono kamerę 0
+[2025-01-25 13:06:02] [INFO] Kamery zostały załadowane.
+[2025-01-25 13:06:04] [INFO] Próba zapisania twarzy bez uruchomionej kamery.
+[2025-01-25 13:06:06] [INFO] Kamera została uruchomiona.
+[2025-01-25 13:06:12] [ERROR] Błąd podczas uruchamiania kamery: Wystąpił przynajmniej jeden błąd.
+[2025-01-25 13:09:33] [ERROR] Błąd podczas uruchamiania kamery: Wystąpił przynajmniej jeden błąd.
+[2025-01-25 13:12:03] [INFO] Rozpoczęcie wykrywania kamer...
+[2025-01-25 13:12:05] [INFO] Znaleziono kamerę 0
+[2025-01-25 13:12:05] [INFO] Kamery zostały załadowane.
+[2025-01-25 13:12:19] [INFO] Kamera została uruchomiona.
+[2025-01-25 13:12:28] [INFO] Kamera została wyłączona.
+[2025-01-25 13:13:22] [INFO] Rozpoczęcie wykrywania kamer...
+[2025-01-25 13:13:24] [INFO] Znaleziono kamerę 0
+[2025-01-25 13:13:24] [INFO] Kamery zostały załadowane.
+[2025-01-25 13:13:30] [INFO] Kamera została uruchomiona.
+[2025-01-25 13:14:46] [INFO] Wykryte twarze zostały zapisane w katalogu 'Face'.
+[2025-01-25 13:15:04] [INFO] Rozpoczęcie wykrywania kamer...
+[2025-01-25 13:15:05] [INFO] Znaleziono kamerę 0
+[2025-01-25 13:15:05] [INFO] Kamery zostały załadowane.
+[2025-01-25 13:15:26] [INFO] Kamera została uruchomiona.
+[2025-01-25 13:15:54] [INFO] Rozpoczęcie wykrywania kamer...
+[2025-01-25 13:15:55] [INFO] Znaleziono kamerę 0
+[2025-01-25 13:15:56] [INFO] Kamery zostały załadowane.
+[2025-01-25 13:15:58] [INFO] Kamera została uruchomiona.
+[2025-01-25 13:16:10] [INFO] Wykryte twarze zostały zapisane w katalogu 'Face'.
+[2025-01-25 13:17:02] [INFO] Wykryte twarze zostały zapisane w katalogu 'Face'.
+[2025-01-25 13:17:07] [INFO] Model został wytrenowany i zapisany!
+[2025-01-25 13:17:31] [INFO] Kamera została wyłączona.
+[2025-01-25 13:18:19] [INFO] Rozpoczęcie wykrywania kamer...
+[2025-01-25 13:18:20] [INFO] Znaleziono kamerę 0
+[2025-01-25 13:18:21] [INFO] Kamery zostały załadowane.
+[2025-01-25 13:18:24] [INFO] Kamera została uruchomiona.
+[2025-01-25 13:18:42] [INFO] Kamera została wyłączona.
+[2025-01-25 13:19:39] [INFO] Rozpoczęcie wykrywania kamer...
+[2025-01-25 13:19:41] [INFO] Znaleziono kamerę 0
+[2025-01-25 13:19:41] [INFO] Kamery zostały załadowane.
+[2025-01-25 13:19:44] [INFO] Kamera została uruchomiona.
+[2025-01-25 13:19:48] [INFO] Kamera została wyłączona.
+[2025-01-25 13:21:02] [INFO] Rozpoczęcie wykrywania kamer...
+[2025-01-25 13:21:04] [INFO] Znaleziono kamerę 0
+[2025-01-25 13:21:04] [INFO] Kamery zostały załadowane.
+[2025-01-25 13:21:06] [INFO] Kamera została uruchomiona.
+[2025-01-25 13:21:22] [INFO] Kamera została wyłączona.
+[2025-01-25 13:26:42] [INFO] Rozpoczęcie wykrywania kamer...
+[2025-01-25 13:26:44] [INFO] Znaleziono kamerę 0
+[2025-01-25 13:26:44] [INFO] Kamery zostały załadowane.
+[2025-01-25 13:26:46] [INFO] Kamera została uruchomiona.
+[2025-01-25 13:26:59] [INFO] Wykryte twarze zostały zapisane w katalogu 'Face'.
+[2025-01-25 13:27:08] [INFO] Model został wytrenowany i zapisany!
+[2025-01-25 13:27:27] [INFO] Wykryte twarze zostały zapisane w katalogu 'Face'.
+[2025-01-25 13:27:31] [INFO] Model został wytrenowany i zapisany!
+[2025-01-25 13:27:45] [INFO] Wykryte twarze zostały zapisane w katalogu 'Face'.
+[2025-01-25 13:27:48] [INFO] Model został wytrenowany i zapisany!
+[2025-01-25 13:27:59] [INFO] Wykryte twarze zostały zapisane w katalogu 'Face'.
+[2025-01-25 13:28:02] [INFO] Model został wytrenowany i zapisany!
+[2025-01-25 13:28:12] [INFO] Model został wytrenowany i zapisany!
+[2025-01-25 13:28:19] [INFO] Wykryte twarze zostały zapisane w katalogu 'Face'.
+[2025-01-25 13:28:23] [INFO] Model został wytrenowany i zapisany!
+[2025-01-25 13:28:34] [INFO] Kamera została wyłączona.
+[2025-01-25 13:39:25] [INFO] Rozpoczęcie wykrywania kamer...
+[2025-01-25 13:39:26] [INFO] Znaleziono kamerę 0
+[2025-01-25 13:39:27] [INFO] Kamery zostały załadowane.
+[2025-01-25 13:39:29] [INFO] Kamera została uruchomiona.
+[2025-01-25 13:39:37] [INFO] Wykryte twarze zostały zapisane w katalogu 'Face'.
+[2025-01-25 13:39:42] [INFO] Model został wytrenowany i zapisany!
+[2025-01-25 13:39:49] [INFO] Model został wytrenowany i zapisany!
+[2025-01-25 13:40:22] [INFO] Wykryte twarze zostały zapisane w katalogu 'Face'.
+[2025-01-25 13:40:27] [INFO] Wykryte twarze zostały zapisane w katalogu 'Face'.
+[2025-01-25 13:40:31] [INFO] Model został wytrenowany i zapisany!
+[2025-01-25 13:41:04] [INFO] Kamera została wyłączona.
+[2025-01-25 13:46:17] [INFO] Rozpoczęcie wykrywania kamer...
+[2025-01-25 13:46:18] [INFO] Znaleziono kamerę 0
+[2025-01-25 13:46:19] [INFO] Kamery zostały załadowane.
+[2025-01-25 13:46:22] [INFO] Kamera została uruchomiona.
+[2025-01-25 13:46:26] [INFO] Kamera została wyłączona.
+[2025-01-25 13:46:30] [INFO] Rozpoczęcie wykrywania kamer...
+[2025-01-25 13:46:32] [INFO] Znaleziono kamerę 0
+[2025-01-25 13:46:32] [INFO] Kamery zostały załadowane.
+[2025-01-25 13:46:34] [INFO] Kamera została uruchomiona.
+[2025-01-25 13:46:43] [INFO] Kamera została wyłączona.
+[2025-01-25 13:48:40] [INFO] Rozpoczęcie wykrywania kamer...
+[2025-01-25 13:48:41] [INFO] Znaleziono kamerę 0
+[2025-01-25 13:48:42] [INFO] Kamery zostały załadowane.
+[2025-01-25 13:48:44] [INFO] Kamera została uruchomiona.
+[2025-01-25 13:49:49] [INFO] Wystąpił błąd podczas trenowania modelu: Plik z mapowaniem etykiet nie został znaleziony: path_to_mapping.csv
+[2025-01-25 13:49:51] [INFO] Kamera została wyłączona.
+[2025-01-25 13:51:04] [INFO] Rozpoczęcie wykrywania kamer...
+[2025-01-25 13:51:06] [INFO] Znaleziono kamerę 0
+[2025-01-25 13:51:06] [INFO] Kamery zostały załadowane.
+[2025-01-25 13:51:08] [INFO] Kamera została uruchomiona.
+[2025-01-25 13:51:13] [INFO] Model został wytrenowany i zapisany!
+[2025-01-25 13:51:37] [INFO] Wykryte twarze zostały zapisane w katalogu 'Face'.
+[2025-01-25 13:51:41] [INFO] Model został wytrenowany i zapisany!
+[2025-01-25 13:52:07] [INFO] Kamera została wyłączona.
+[2025-01-25 13:54:26] [INFO] Rozpoczęcie wykrywania kamer...
+[2025-01-25 13:54:28] [INFO] Znaleziono kamerę 0
+[2025-01-25 13:54:28] [INFO] Kamery zostały załadowane.
+[2025-01-25 13:54:31] [INFO] Kamera została uruchomiona.
+[2025-01-25 13:55:24] [INFO] Wykryte twarze zostały zapisane w katalogu 'Face'.
+[2025-01-25 13:55:31] [INFO] Model został wytrenowany i zapisany!
+[2025-01-25 13:55:53] [INFO] Kamera została wyłączona.
+[2025-01-25 14:03:09] [INFO] Rozpoczęcie wykrywania kamer...
+[2025-01-25 14:03:10] [INFO] Znaleziono kamerę 0
+[2025-01-25 14:03:10] [INFO] Kamery zostały załadowane.
+[2025-01-25 14:03:12] [INFO] Kamera została uruchomiona.
+[2025-01-25 14:03:24] [INFO] Wykryte twarze zostały zapisane w katalogu 'Face'.
+[2025-01-25 14:03:28] [INFO] Model został wytrenowany i zapisany!
+[2025-01-25 14:04:17] [INFO] Kamera została wyłączona.
+[2025-01-25 14:06:27] [INFO] Rozpoczęcie wykrywania kamer...
+[2025-01-25 14:06:29] [INFO] Znaleziono kamerę 0
+[2025-01-25 14:06:29] [INFO] Kamery zostały załadowane.
+[2025-01-25 14:06:32] [INFO] Kamera została uruchomiona.
+[2025-01-25 14:06:45] [INFO] Wykryte twarze zostały zapisane w katalogu 'Face'.
+[2025-01-25 14:06:48] [INFO] Model został wytrenowany i zapisany!
+[2025-01-25 14:07:02] [INFO] Wykryte twarze zostały zapisane w katalogu 'Face'.
+[2025-01-25 14:07:06] [INFO] Model został wytrenowany i zapisany!
+[2025-01-25 14:07:31] [INFO] Wykryte twarze zostały zapisane w katalogu 'Face'.
+[2025-01-25 14:07:43] [INFO] Wykryte twarze zostały zapisane w katalogu 'Face'.
+[2025-01-25 14:09:22] [INFO] Wykryte twarze zostały zapisane w katalogu 'Face'.
+[2025-01-25 14:10:48] [INFO] Wykryte twarze zostały zapisane w katalogu 'Face'.
+[2025-01-25 14:10:51] [INFO] Wykryte twarze zostały zapisane w katalogu 'Face'.
+[2025-01-25 14:10:54] [INFO] Wykryte twarze zostały zapisane w katalogu 'Face'.
+[2025-01-25 14:10:58] [INFO] Model został wytrenowany i zapisany!
+[2025-01-25 14:11:26] [INFO] Model został wytrenowany i zapisany!

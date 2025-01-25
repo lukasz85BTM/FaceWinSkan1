@@ -48,9 +48,7 @@ namespace FaceWinSkan1
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.guna2Separator1 = new Guna.UI2.WinForms.Guna2Separator();
             this.face4 = new System.Windows.Forms.PictureBox();
-            this.buttonRecognize = new Guna.UI2.WinForms.Guna2Button();
             this.face3 = new System.Windows.Forms.PictureBox();
-            this.statusLabel = new System.Windows.Forms.Label();
             this.face2 = new System.Windows.Forms.PictureBox();
             this.txtFaceName = new Guna.UI2.WinForms.Guna2TextBox();
             this.pictureBoxRecognizedFace = new System.Windows.Forms.PictureBox();
@@ -70,8 +68,6 @@ namespace FaceWinSkan1
             this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel3 = new System.Windows.Forms.ToolStripStatusLabel();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.labelRecognitionResult = new System.Windows.Forms.Label();
-            this.comboBoxDetectors = new Guna.UI2.WinForms.Guna2ComboBox();
             this.menuStrip1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCamera)).BeginInit();
@@ -220,12 +216,9 @@ namespace FaceWinSkan1
             // groupBox3
             // 
             this.groupBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox3.Controls.Add(this.labelRecognitionResult);
             this.groupBox3.Controls.Add(this.guna2Separator1);
             this.groupBox3.Controls.Add(this.face4);
-            this.groupBox3.Controls.Add(this.buttonRecognize);
             this.groupBox3.Controls.Add(this.face3);
-            this.groupBox3.Controls.Add(this.statusLabel);
             this.groupBox3.Controls.Add(this.face2);
             this.groupBox3.Controls.Add(this.txtFaceName);
             this.groupBox3.Controls.Add(this.pictureBoxRecognizedFace);
@@ -256,25 +249,6 @@ namespace FaceWinSkan1
             this.face4.TabIndex = 15;
             this.face4.TabStop = false;
             // 
-            // buttonRecognize
-            // 
-            this.buttonRecognize.Animated = true;
-            this.buttonRecognize.BorderRadius = 5;
-            this.buttonRecognize.BorderThickness = 1;
-            this.buttonRecognize.CheckedState.Parent = this.buttonRecognize;
-            this.buttonRecognize.CustomImages.Parent = this.buttonRecognize;
-            this.buttonRecognize.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.buttonRecognize.ForeColor = System.Drawing.Color.White;
-            this.buttonRecognize.HoverState.Parent = this.buttonRecognize;
-            this.buttonRecognize.Location = new System.Drawing.Point(303, 9);
-            this.buttonRecognize.Name = "buttonRecognize";
-            this.buttonRecognize.ShadowDecoration.Parent = this.buttonRecognize;
-            this.buttonRecognize.Size = new System.Drawing.Size(93, 33);
-            this.buttonRecognize.TabIndex = 0;
-            this.buttonRecognize.Text = "ROZPOZNANIE";
-            this.buttonRecognize.Visible = false;
-            this.buttonRecognize.Click += new System.EventHandler(this.buttonRecognize_Click);
-            // 
             // face3
             // 
             this.face3.BackColor = System.Drawing.Color.White;
@@ -284,16 +258,6 @@ namespace FaceWinSkan1
             this.face3.Size = new System.Drawing.Size(80, 83);
             this.face3.TabIndex = 15;
             this.face3.TabStop = false;
-            // 
-            // statusLabel
-            // 
-            this.statusLabel.AutoSize = true;
-            this.statusLabel.Location = new System.Drawing.Point(262, 9);
-            this.statusLabel.Name = "statusLabel";
-            this.statusLabel.Size = new System.Drawing.Size(35, 13);
-            this.statusLabel.TabIndex = 14;
-            this.statusLabel.Text = "label1";
-            this.statusLabel.Visible = false;
             // 
             // face2
             // 
@@ -390,7 +354,6 @@ namespace FaceWinSkan1
             // groupBox1
             // 
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox1.Controls.Add(this.comboBoxDetectors);
             this.groupBox1.Controls.Add(this.btn_model);
             this.groupBox1.Controls.Add(this.btn_ImageFace);
             this.groupBox1.Controls.Add(this.guna2Button2);
@@ -531,35 +494,6 @@ namespace FaceWinSkan1
             // 
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // labelRecognitionResult
-            // 
-            this.labelRecognitionResult.AutoSize = true;
-            this.labelRecognitionResult.Location = new System.Drawing.Point(221, 9);
-            this.labelRecognitionResult.Name = "labelRecognitionResult";
-            this.labelRecognitionResult.Size = new System.Drawing.Size(35, 13);
-            this.labelRecognitionResult.TabIndex = 17;
-            this.labelRecognitionResult.Text = "label4";
-            this.labelRecognitionResult.Visible = false;
-            // 
-            // comboBoxDetectors
-            // 
-            this.comboBoxDetectors.BackColor = System.Drawing.Color.Transparent;
-            this.comboBoxDetectors.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.comboBoxDetectors.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxDetectors.FocusedColor = System.Drawing.Color.Empty;
-            this.comboBoxDetectors.FocusedState.Parent = this.comboBoxDetectors;
-            this.comboBoxDetectors.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.comboBoxDetectors.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
-            this.comboBoxDetectors.FormattingEnabled = true;
-            this.comboBoxDetectors.HoverState.Parent = this.comboBoxDetectors;
-            this.comboBoxDetectors.ItemHeight = 30;
-            this.comboBoxDetectors.ItemsAppearance.Parent = this.comboBoxDetectors;
-            this.comboBoxDetectors.Location = new System.Drawing.Point(6, 109);
-            this.comboBoxDetectors.Name = "comboBoxDetectors";
-            this.comboBoxDetectors.ShadowDecoration.Parent = this.comboBoxDetectors;
-            this.comboBoxDetectors.Size = new System.Drawing.Size(357, 36);
-            this.comboBoxDetectors.TabIndex = 18;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -623,8 +557,6 @@ namespace FaceWinSkan1
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel3;
         private Guna.UI2.WinForms.Guna2Button guna2Button2;
         private Guna.UI2.WinForms.Guna2Button TrainButton;
-        private Guna.UI2.WinForms.Guna2Button buttonRecognize;
-        private System.Windows.Forms.Label statusLabel;
         private System.Windows.Forms.PictureBox face4;
         private System.Windows.Forms.PictureBox face3;
         private System.Windows.Forms.PictureBox face2;
@@ -636,8 +568,6 @@ namespace FaceWinSkan1
         private Guna.UI2.WinForms.Guna2ImageButton btn_ImageFace;
         private Guna.UI2.WinForms.Guna2ImageButton btn_model;
         private System.Windows.Forms.Timer timer1;
-        private System.Windows.Forms.Label labelRecognitionResult;
-        private Guna.UI2.WinForms.Guna2ComboBox comboBoxDetectors;
     }
 }
 

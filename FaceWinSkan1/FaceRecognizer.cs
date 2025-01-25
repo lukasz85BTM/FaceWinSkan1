@@ -1,6 +1,6 @@
 ﻿using Emgu.CV;
-using Emgu.CV.Structure;
 using Emgu.CV.Face;
+using Emgu.CV.Structure;
 using System;
 using System.Drawing;
 using System.IO;

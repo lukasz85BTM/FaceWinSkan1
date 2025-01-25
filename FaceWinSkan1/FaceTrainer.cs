@@ -1,26 +1,60 @@
-﻿using System;
-using System.IO;
-using System.Collections.Generic;
-using Emgu.CV;
+﻿using Emgu.CV;
 using Emgu.CV.CvEnum;
 using Emgu.CV.Face;
-using Emgu.CV.Util;
 using Emgu.CV.Structure;
+using Emgu.CV.Util;
+using System;
+using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 
 public class FaceTrainer
 {
     private List<string> _names;  // Lista nazw przypisanych do etykiet
     private LBPHFaceRecognizer _faceRecognizer;
+    private Dictionary<int, string> _labelMapping; // Słownik do mapowania etykiety na nazwę
 
     public FaceTrainer()
     {
         _names = new List<string>();
         _faceRecognizer = new LBPHFaceRecognizer();
+        _labelMapping = new Dictionary<int, string>(); // Inicjalizacja mapy etykiet
     }
+    // Metoda do wczytania mapowania etykiet z pliku CSV
+    public void LoadLabelMapping(string mappingFilePath)
+    {
+        if (!File.Exists(mappingFilePath))
+        {
+            throw new FileNotFoundException("Plik z mapowaniem etykiet nie został znaleziony: " + mappingFilePath);
+        }
 
+        var lines = File.ReadAllLines(mappingFilePath);
+        foreach (var line in lines)
+        {
+            var parts = line.Split(',');
+            if (parts.Length == 2)
+            {
+                if (int.TryParse(parts[0], out int label))
+                {
+                    _labelMapping[label] = parts[1].Trim(); // Przypisanie etykiety do nazwy
+                }
+                else
+                {
+                    throw new FormatException("Nieprawidłowy format etykiety w pliku: " + line);
+                }
+            }
+            else
+            {
+                throw new FormatException("Nieprawidłowy format wiersza w pliku: " + line);
+            }
+        }
+    }
+    // Metoda do trenowania modelu
     public void TrainModel(string faceFolderPath, string modelSavePath)
     {
+        // Wczytujemy mapowanie etykiet
+        LoadLabelMapping("mapping.csv");  // Przywrócona prawidłowa ścieżka
+
         // Sprawdzamy, czy folder z obrazami istnieje
         if (!Directory.Exists(faceFolderPath))
         {
@@ -57,6 +91,8 @@ public class FaceTrainer
 
             // Pobieramy nazwisko z folderu i przypisujemy do etykiety
             string name = new DirectoryInfo(Path.GetDirectoryName(file)).Name;
+
+            // Upewnijmy się, że etykieta nie przekracza rozmiaru listy
             if (label >= 0 && label < _names.Count)
             {
                 _names[label] = name;  // Przypisujemy nazwisko do odpowiedniej etykiety
@@ -65,6 +101,9 @@ public class FaceTrainer
             {
                 _names.Add(name);  // Dodajemy nową nazwę dla nowej etykiety
             }
+
+            // Logowanie dla debugowania
+            Console.WriteLine($"Plik: {file}, Etykieta: {label}, Nazwa: {name}");
         }
 
         // Konwersja listy etykiet na VectorOfInt
@@ -92,7 +131,6 @@ public class FaceTrainer
             throw new Exception("Wystąpił błąd podczas zapisywania modelu: " + ex.Message);
         }
     }
-
 
     public void LoadModel(string modelPath)
     {

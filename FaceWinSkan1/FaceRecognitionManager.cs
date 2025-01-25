@@ -1,7 +1,4 @@
-﻿using Emgu.CV;
-using Emgu.CV.Structure;
-using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
 public class FaceRecognitionManager
 {
@@ -21,5 +18,5 @@ public class FaceRecognitionManager
         };
     }
 
-    
+
 }
